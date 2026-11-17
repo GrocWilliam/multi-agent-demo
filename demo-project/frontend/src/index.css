@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-void text-starlight font-sans;
+  }
+  body {
+    @apply min-h-screen bg-void;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-plasma ring-offset-2 ring-offset-void;
+  }
+}
+
+@layer utilities {
+  /* Étoiles statiques (dégradés radiaux, sans image binaire) */
+  .stars {
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #e8ecff, transparent),
+      radial-gradient(1px 1px at 90px 120px, #4de1ff, transparent),
+      radial-gradient(1.5px 1.5px at 160px 60px, #e8ecff, transparent),
+      radial-gradient(1px 1px at 220px 180px, #ff4fd8, transparent);
+    background-size: 250px 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
